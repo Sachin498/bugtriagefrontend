@@ -6,20 +6,72 @@
   </head>
   <body>
   <style>
-  *{
-  background-image:url({{url_for('static',filename="finnn.jpg")}});
+  body{
+  background-image:url({{url_for('static',filename="blue.jpg")}});
   background-repeat:no-repeat;
   background-size:cover;
-  text-align:center;
+  font-family:'Times New Roman',cursive;
+  line-spacing:'-1px';
+  letter-spacing:1px;
+  <!--background:#34495e;-->
   }
-  
+  .box{
+  width: 400px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background:rgb(0,0,0,0.7);
+  text-align: center;
+  }
+  .box input[type = "submit"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.box input[type = "submit"]:hover{
+  background: #2ecc71;
+}
+.box input[type = "number"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.box input[type = "number"]:focus{
+  width: 280px;
+  border-color: #2ecc71;
+}
   </style>
-    <h1 style="color:white">BUG TRIAGE</h1>
-       <div class="center">
-       <form action = "/predict" method = "POST">
-          <p style="color:white">ID:<input  type="number" name = "bug_id" placeholder="Enter the ID"/></p>
-          <p style="color:white"><input type = "submit" value = "Assign" style="background-color:white" /></p>
-          <p>{{dev}}</p>
+  <br><br><
+    
+	<br>
+       <div>
+       <form class="box" action = "/predict" method = "POST">
+	   <h1 style="color:white" align="center">BUG TRIAGE</h1>
+          <p style="color:white" align="center"><input  type="number" name = "bug_id" placeholder="Enter the ID" style="color:white"/></p>
+          <p style="color:white" align="center"><input type = "submit" value = "Assign" style="color:white" /></p>
+		  <br>
+		  <p style="color:white" align="center"><output>{{desc}}</output></p>
+		  <p style="color: #2ecc71" align="center"><b>{{dev}}</b></p>
        </form>
        </div>
   </body>
